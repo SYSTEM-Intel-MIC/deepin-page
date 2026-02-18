@@ -31,7 +31,7 @@
               <div class=" tw-w-full tw-h-full" v-if="selected_tag === '关于'">
                 <div ref="overall_page" class="tw-w-full tw-h-full tw-items-center tw-flex tw-flex-col" style="text-align:center" v-if="selected_tag_2 ==='up主'">
                   <div class=" tw-w-20 tw-h-20 tw-rounded-full tw-overflow-hidden tw-mt-16">
-                    <img src="./1.jpg" alt="" class="tw-bg-red-500">
+                    <img src="../../assets/images/deepin.jpg" alt="" class="tw-bg-red-500">
                   </div>
                   <div class="tw-mt-3 tw-text-gray-400">deepin</div>
                   <div class="tw-text-xl tw-mt-2 tw-tracking-wide"> 网页模拟操作系统</div>
