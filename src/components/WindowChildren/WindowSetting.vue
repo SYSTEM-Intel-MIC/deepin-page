@@ -31,11 +31,11 @@
               <div class=" tw-w-full tw-h-full" v-if="selected_tag === '关于'">
                 <div ref="overall_page" class="tw-w-full tw-h-full tw-items-center tw-flex tw-flex-col" style="text-align:center" v-if="selected_tag_2 ==='up主'">
                   <div class=" tw-w-20 tw-h-20 tw-rounded-full tw-overflow-hidden tw-mt-16">
-                    <img src="../../assets/images/deepin.jpg" alt="" class="tw-bg-red-500">
+                    <img src="../../assets/images/deepin_2.jpg" alt="" class="tw-bg-red-500">
                   </div>
                   <div class="tw-mt-3 tw-text-gray-400">deepin</div>
-                  <div class="tw-text-xl tw-mt-2 tw-tracking-wide"> 网页模拟操作系统</div>
-                  <div class="tw-text-lg tw-mt-2 tw-tracking-wide"> 网页模拟操作系统 </div>
+                  <div class="tw-text-xl tw-mt-2 tw-tracking-wide"> 网页模拟深度操作系统</div>
+                  <div class="tw-text-lg tw-mt-2 tw-tracking-wide"> 一个有趣的网站，可惜目前只适配电脑端 </div>
                 </div>
                 <div ref="github_page" class="tw-w-full tw-h-full tw-items-center tw-flex tw-flex-col tw-justify-center" style="text-align:center" v-if="selected_tag_2 ==='Github Stats'">
                   <img src="https://github-readme-stats.vercel.app/api?username=GoodManWEN&show_icons=true&line_height=24" alt="" class="tw-w-140 tw-h-40">
