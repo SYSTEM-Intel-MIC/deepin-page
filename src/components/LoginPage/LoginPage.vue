@@ -48,7 +48,7 @@
           <img src="../../assets/images/deepin_text_1.png" alt="" class="tw-w-32">
           <div class="flex-none tw-flex tw-flex-col-reverse tw-pl-3">
             <div class="tw-h-3"></div>
-            <div class="tw-absolute tw-text-gray-400">20.2 Community Edition</div></div>
+            <div class="tw-absolute tw-text-gray-400">25.0.10 Community Edition</div></div>
         </div>
         <div class="tw-h-full tw-flex-grow"></div>
         <div class="tw-h-full flex-none tw-w-76 tw-flex tw-justify-center tw-items-center tw-pr-2" style="min-width:300px">
@@ -89,10 +89,9 @@ export default {
       date_month:1,
       date_date:1,
       date_weekday:0,
-      // user_name:"Observer",
-      user_name:"Guest",
-      password:"12345678",
-      password_answer:"12345678",
+      user_name:"默认用户(密码123)",
+      password:"",
+      password_answer:"123",
       relay:false,
       show_loading_bar:false,
       button_shaking:false,
