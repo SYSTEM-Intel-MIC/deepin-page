@@ -50,13 +50,22 @@ export default {
     context_menu_y() {
       return this.$store.state.context_menu_y;
     },
-    has_terminal() {
-      return this.$store.state.has_terminal;
+    has_terminal(){
+      for (let item of this.$store.state.window_list) {
+        if (item.type === 'terminal') {
+          return true
+        }
+      }
+      return false
     },
-    has_settings() {
-      return this.$store.state.has_settings;
-    }
-  },
+    has_settings(){
+      for (let item of this.$store.state.window_list) {
+        if (item.type === 'settings') {
+          return true
+        }
+      }
+      return false
+    },
   methods: {
     reload_clicked() {
       if (this.isReloading) return;
