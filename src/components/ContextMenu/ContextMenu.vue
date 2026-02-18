@@ -88,30 +88,34 @@ export default {
       }, 500);
     },
     
-    fullclicked() {
-      this.$store.commit('clear_context_menu');
+    fullclicked(event) {
+      event.stopPropagation();
+      this.$store.commit('clear_context_menu'); // 或 hide_context_menu，根据您的 Vuex mutation 名称
     },
     
     terminal_clicked() {
       if (this.has_terminal) {
         this.$store.commit('switch_global_window_show_status', {'type':'terminal'});
       } else {
-        window.open('/terminal');
+        this.$store.commit('open_new_window', {'type':'terminal'}); // 关键修改：使用 Vuex 管理窗口
       }
-      this.$store.commit('clear_context_menu');
+      this.$store.commit('refresh_window_focus', {'type':'terminal'});
+      this.$store.commit('clear_context_menu'); // 或 hide_context_menu
     },
     
     settings_clicked() {
       if (this.has_settings) {
         this.$store.commit('switch_global_window_show_status', {'type':'settings'});
       } else {
-        window.open('/settings');
+        this.$store.commit('open_new_window', {'type':'settings'}); // 关键修改：使用 Vuex 管理窗口
       }
-      this.$store.commit('clear_context_menu');
+      this.$store.commit('refresh_window_focus', {'type':'settings'});
+      this.$store.commit('clear_context_menu'); // 或 hide_context_menu
     },
     
     old_website() {
-      window.location.href = "https://old.rainy.me";
+      window.open("https://old.rainy.me", "_blank");
+      this.$store.commit('clear_context_menu'); // 或 hide_context_menu
     }
   },
   
