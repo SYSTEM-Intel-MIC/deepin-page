@@ -1,5 +1,6 @@
 module.exports = {
-  publicPath: './'
+  publicPath: './',
+  
   transpileDependencies: [
     'vuetify'
   ],
@@ -14,7 +15,7 @@ module.exports = {
           '^/dev':''
         }
       }
-    },
+    }
   },
   productionSourceMap: false,
   pwa:{
