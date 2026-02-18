@@ -42,6 +42,21 @@ export default {
       progressInterval: null
     }
   },
+  computed: {
+    // 从 Vuex store 获取位置数据
+    context_menu_x() {
+      return this.$store.state.context_menu_x;
+    },
+    context_menu_y() {
+      return this.$store.state.context_menu_y;
+    },
+    has_terminal() {
+      return this.$store.state.has_terminal;
+    },
+    has_settings() {
+      return this.$store.state.has_settings;
+    }
+  },
   methods: {
     reload_clicked() {
       if (this.isReloading) return;
