@@ -118,6 +118,6 @@ export default {
     if (this.progressInterval) {
       clearInterval(this.progressInterval);
     }
-  }
+  },
 }
 </script>
