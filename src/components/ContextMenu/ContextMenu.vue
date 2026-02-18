@@ -66,6 +66,7 @@ export default {
       }
       return false
     },
+  },
   methods: {
     reload_clicked() {
       if (this.isReloading) return;
