@@ -4,8 +4,22 @@
       <ContextMenuButton disabled further_menu :text="'新建'"/>
       <ContextMenuButton disabled further_menu :text="'查看'"/>
       <ContextMenuButton disabled further_menu :text="'排列方式'"/>
-      <ContextMenuButton :text="'重新拉取deepin镜像'" @click.native="reload_clicked"/>
-      <ContextMenuButton disabled :text="'粘贴'"/>
+
+<div class="tw-relative" @click.stop>
+  <ContextMenuButton 
+    :text="'重新拉取系统镜像'" 
+    :disabled="isReloading"
+    @click.native="reload_clicked"
+  />
+  <!-- 进度条 -->
+  <div v-if="isReloading" class="tw-absolute tw-bottom-0 tw-left-0 tw-w-full tw-h-1 tw-bg-gray-200">
+    <div 
+      class="tw-h-full tw-bg-blue-500 tw-transition-all tw-duration-300" 
+      :style="{ width: progress + '%' }"
+    ></div>
+  </div>
+</div>
+ <ContextMenuButton disabled :text="'粘贴'"/>
       <ContextMenuButton  :text="'在终端打开'" @click.native="terminal_clicked"/>
       <div class=" tw-w-full" style="height:1.5px;background-color:rgba(188,188,188,1)"></div>
       <ContextMenuButton disabled :text="'个性化'"/>
@@ -24,7 +38,9 @@ export default {
   },
   data(){
     return {
-
+    isReloading: false,
+    progress: 0,
+    progressInterval: null
     }
   },
   created(){
@@ -62,6 +78,27 @@ export default {
       // this.$store.commit('hide_context_menu')
       event.stopPropagation()
     },
+    
+  reload_clicked() {
+    if (this.isReloading) return;
+    
+    this.isReloading = true;
+    this.progress = 0;
+    
+    this.progressInterval = setInterval(() => {
+      this.progress += Math.random() * 15 + 5;
+      
+      if (this.progress >= 100) {
+        this.progress = 100;
+        clearInterval(this.progressInterval);
+        
+        setTimeout(() => {
+          window.location.reload(); // 刷新页面
+        }, 1000);
+      }
+    }, 500);
+  }
+
     settings_clicked(){
       if (this.has_settings) {
         this.$store.commit('switch_global_window_show_status', {'type':'settings'})
@@ -84,6 +121,12 @@ export default {
       window.open("https://github.com/GoodManWEN/GoodManWEN.github.io", "_blank");
       this.$store.commit('hide_context_menu')
     },
+    beforeDestroy() {
+  if (this.progressInterval) {
+    clearInterval(this.progressInterval);
+  }
+}
+
     reload_clicked(){
       location.reload();
     }
