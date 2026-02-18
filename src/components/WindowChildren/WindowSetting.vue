@@ -50,13 +50,13 @@
               </div>
               <div class="tw-w-full tw-h-full" v-if="selected_tag === 'Skills'">
                 <div ref="github_page" class="tw-w-full tw-h-full tw-items-center tw-flex tw-flex-col tw-justify-center tw-mb-16" style="text-align:center" v-if="selected_tag_2 ==='And Some Else'">
-                  <img src="../../assets/images/holo.gif" alt="" class="">
-                  <div class="tw-text-lg tw-mt-2 tw-tracking-wide tw-mb-10"> Thanks for watching this demo, hope you enjoy it. </div>
+                  <img src="../../assets/images/kq.jpeg" alt="" class="">
+                  <div class="tw-text-lg tw-mt-2 tw-tracking-wide tw-mb-10"> 感谢打开此网站，希望你喜欢！</div>
                 </div> 
               </div>
               <div class="tw-w-full tw-h-full" v-if="selected_tag === 'Resume'">
                 <div ref="overall_page" class="tw-w-full tw-h-full tw-items-center tw-flex tw-flex-col tw-justify-center" style="text-align:center">
-                  <div class="tw-text-4xl tw-mt-2 tw-tracking-wider"> Coming Soon </div>
+                  <div class="tw-text-4xl tw-mt-2 tw-tracking-wider"> 好东西就要来了</div>
                 </div>
               </div>
             </div>
