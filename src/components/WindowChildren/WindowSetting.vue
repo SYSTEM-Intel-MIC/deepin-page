@@ -10,7 +10,7 @@
       <div class=" tw-w-full  tw-h-full tw-rounded-b-2xl tw-overflow-hidden tw-flex
        tw-select-none" @contextmenu.prevent="mr_clicked">
         <div class=" tw-w-52 tw-bg-white tw-h-full tw-flex tw-flex-col tw-px-3 tw-py-2 tw-flex-none" >
-          <WindowSettingIcon :tag="'关于'" :img="'profile'" :selected_tag="selected_tag" @click.native="{selected_tag = '关于';selected_tag_2 = 'up主'}"/>
+          <WindowSettingIcon :tag="'关于'" :img="'profile'" :selected_tag="selected_tag" @click.native="{selected_tag = '关于';selected_tag_2 = '系统消息'}"/>
           <WindowSettingIcon :tag="'Skills'" :img="'skills'" :selected_tag="selected_tag"  @click.native="{selected_tag = 'Skills';selected_tag_2 = 'And Some Else'}"/>
           <WindowSettingIcon :tag="'Resume'" :img="'paint'" :selected_tag="selected_tag"  @click.native="selected_tag = 'Resume'"/>
         </div>
@@ -28,9 +28,9 @@
             <div class="vl"></div>
             <div class="tw-flex-grow tw-bg-white tw-h-full">
               <div class=" tw-w-full tw-h-full" v-if="selected_tag === '关于'">
-                <div ref="overall_page" class="tw-w-full tw-h-full tw-items-center tw-flex tw-flex-col" style="text-align:center" v-if="selected_tag_2 ==='up主'">
+                <div ref="overall_page" class="tw-w-full tw-h-full tw-items-center tw-flex tw-flex-col" style="text-align:center" v-if="selected_tag_2 ==='系统消息'">
                   <div class=" tw-w-20 tw-h-20 tw-rounded-full tw-overflow-hidden tw-mt-16">
-                    <img src="../../assets/images/deepin_2.jpg" alt="" class="tw-bg-red-500">
+                    <img src="../../assets/images/deepin_2.png" alt="" class="tw-bg-red-500">
                   </div>
                   <div class="tw-mt-3 tw-text-gray-400">deepin</div>
                   <div class="tw-text-xl tw-mt-2 tw-tracking-wide"> 网页模拟深度操作系统</div>
@@ -81,7 +81,7 @@ export default {
   data(){
     return {
       selected_tag:"关于",
-      selected_tag_2:"up主",
+      selected_tag_2:"系统信息",
     }
   },
   props:{
