@@ -5,7 +5,6 @@ on:
     branches:
       - 'main'
       - 'dev'
-      
   workflow_dispatch:
 
 jobs:
@@ -16,14 +15,17 @@ jobs:
         uses: actions/checkout@v1
         with:
           repository: SYSTEM-Intel-MIC/Deepin-Page
+          
       - name: Set up Node
         uses: actions/setup-node@v2
         with:
           node-version: 12
+          
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
+          
       - name: Build
         run: |
           git config --global core.quotepath false
@@ -31,15 +33,20 @@ jobs:
           python3 generate.py
           npm install
           npm run build
-      - name: Commit files
+          
+      - name: Configure Git
         run: |
           git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Action[Bot]"
-          git add -A
-          git commit -m "update built files after user commit"
+          git config --local user.name "GitHub Actions"
+          
+      - name: Add and Commit
+        run: |
+          git add docs/ -f  # 强制添加 docs 目录
+          git commit -m "Auto-build: $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
-      
+          branch: ${{ github.ref }}  # 推回到原分支
+          force: true
