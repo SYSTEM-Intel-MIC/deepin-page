@@ -62,7 +62,7 @@ export default {
       return this.$store.state.filemap
     },
     header(){
-      let res = "guest@wen-PC: ~/"
+      let res = "user@deepin-PC: ~/"
       for (let dir of this.path_stack) {
         res += (dir + '/')
       }
