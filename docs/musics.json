@@ -3,12 +3,12 @@
     "title":"云底船",
     "artist":"洛天依",
     "src":"./musics/云底船.mp3",
-    "pic":"/musics/云底船.png"
+    "pic":"./musics/云底船.png"
   },
   {
     "title":"原神5周年主题曲《回家的路》",
     "artist":"米哈游",
     "src":"./musics/回家的路.mp3",
-    "pic":"/musics/回家的路.png"
+    "pic":"./musics/回家的路.png"
   }
 ]
