@@ -4,7 +4,7 @@
     <template v-slot:header>
       <div class=" tw-ml-4 tw-font-bold tw-tracking-wider tw-flex tw-items-center tw-select-none" style="pointer-events:none;"> 
         <img src="../../assets/images/icons/browser.png" alt="" style="pointer-events:auto;" class=" tw-w-7 tw-h-7">
-        <div class=" tw-ml-4 tw-font-bold tw-tracking-wider " style="pointer-events:none;"> Google Chrome </div>
+        <div class=" tw-ml-4 tw-font-bold tw-tracking-wider " style="pointer-events:none;">浏览器</div>
       </div>
     </template>
     <template v-slot:content>
@@ -49,10 +49,10 @@ export default {
       tipoffsetY:0,
       tipoffsetX:0,
       show_lock_tip:false,
-      input_src:"https://www.google.com/webhp?igu=1",
-      real_src:'https://www.google.com/webhp?igu=1',
+      input_src:"https://space.bilibili.com/1978487514",
+      real_src:'https://space.bilibili.com/1978487514',
       no_http:false,
-      href_stack:['https://www.google.com/webhp?igu=1',],
+      href_stack:['https://space.bilibili.com/1978487514',],
       href_stack_pointer:0,
     }
   },
@@ -123,11 +123,6 @@ export default {
         header_https = true
       } else {
         noheader = true
-      }
-      let googlepat = /^((https|http|ftp|rtsp|mms)?:\/\/)?[w.]*google\.com(\/)*$/
-      if (googlepat.test(this.input_src)) {
-        this.input_src = 'https://www.google.com/webhp?igu=1'
-        noheader = false
       }
       if (noheader) {
         this.real_src = 'https://' + this.input_src
