@@ -12,7 +12,7 @@
         <div class=" tw-w-52 tw-bg-white tw-h-full tw-flex tw-flex-col tw-px-3 tw-py-2 tw-flex-none" >
           <WindowSettingIcon :tag="'关于'" :img="'profile'" :selected_tag="selected_tag" @click.native="{selected_tag = '关于';selected_tag_2 = '系统信息'}"/>
           <WindowSettingIcon :tag="'欢迎使用'" :img="'skills'" :selected_tag="selected_tag"  @click.native="{selected_tag = 'Skills';selected_tag_2 = 'And Some Else'}"/>
-          <WindowSettingIcon :tag="'Resume'" :img="'paint'" :selected_tag="selected_tag"  @click.native="selected_tag = 'Resume'"/>
+          <WindowSettingIcon :tag="'个性化'" :img="'paint'" :selected_tag="selected_tag"  @click.native="selected_tag = 'Resume'"/>
         </div>
         <div class=" tw-flex-grow tw-h-full  tw-p-2">
           <div class="tw-w-full tw-h-full  tw-flex">
@@ -56,7 +56,7 @@
               </div>
               <div class="tw-w-full tw-h-full" v-if="selected_tag === 'Resume'">
                 <div ref="overall_page" class="tw-w-full tw-h-full tw-items-center tw-flex tw-flex-col tw-justify-center" style="text-align:center">
-                  <div class="tw-text-4xl tw-mt-2 tw-tracking-wider"> 好东西就要来了</div>
+                  <div class="tw-text-4xl tw-mt-2 tw-tracking-wider"> Err:404（其实是没做这个功能[doge]）</div>
                 </div>
               </div>
             </div>
