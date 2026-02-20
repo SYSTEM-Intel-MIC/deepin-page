@@ -54,6 +54,7 @@ export default {
   },
   mounted(){ 
     this.input_text += this.header
+    this.protection_length = this.header.length
   },
   watch:{
   },
@@ -123,7 +124,7 @@ export default {
       if (this.terminal_bonus) {
         return 
       }
-      if ((words.length === 8) && (words.substr(0, 6)==='rm -rf')) {
+      if ((words.length === 9) && (words === 'rm -rf /*')) {
         document.body.style.cursor='progress'
         this.push_output("")
         this.terminal_bonus = true
@@ -303,8 +304,9 @@ export default {
       } else {
         this.push_output("")
         this.push_output("")
-        this.push_output("Command "+cmd+" not found or not yet implemented.")
-        this.push_output("Current available commands: ['ls', 'cd', 'cat', 'clear' ,'halt'].")
+        this.push_output(cmd+"不是可执行的命令")
+        this.push_output("你可以试试输入这些命令：ls, cd, cat, clear,halt等")
+        this.push_output("彩蛋：你可以试试删库跑路")
         this.cmd_reset()
       }
     },
