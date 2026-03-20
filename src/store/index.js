@@ -76,19 +76,21 @@ const store = new Vuex.Store({
       state.window_list.push(obj)
       this.commit('refresh_window_focus', {uuid:new_uuid})
 
-      // refresh initialize position
-      let init_width = Math.min(state.fullWidth * 0.6 , 1000);
-      let init_height = 600;
-      let padding_y = 100
-      if ((state.fullHeight - state.n_spy - padding_y) < init_height) {
-        state.n_spy = (state.n_spy + state.spy_step + init_height + padding_y) % state.fullHeight
-      } else {
-        state.n_spy = state.n_spy + state.spy_step
-      }
-      if ((state.fullWidth - state.n_spx) < init_width) {
-        state.n_spx = (state.n_spx + state.spx_step + init_width) % state.fullWidth 
-      } else {
-        state.n_spx = state.n_spx + state.spx_step
+      // refresh initialize position (skip for minecraft to keep position fixed)
+      if (payload.type !== 'minecraft') {
+        let init_width = Math.min(state.fullWidth * 0.6 , 1000);
+        let init_height = 600;
+        let padding_y = 100
+        if ((state.fullHeight - state.n_spy - padding_y) < init_height) {
+          state.n_spy = (state.n_spy + state.spy_step + init_height + padding_y) % state.fullHeight
+        } else {
+          state.n_spy = state.n_spy + state.spy_step
+        }
+        if ((state.fullWidth - state.n_spx) < init_width) {
+          state.n_spx = (state.n_spx + state.spx_step + init_width) % state.fullWidth 
+        } else {
+          state.n_spx = state.n_spx + state.spx_step
+        }
       }
     },
     close_window_with_uuid(state, payload){

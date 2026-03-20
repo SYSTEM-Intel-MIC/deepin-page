@@ -310,11 +310,11 @@ export default {
   },
   props: {
     uuid: String,
-    startpos_x: {
-      default: 60,
+    startpos_x:{
+      default:60,
     },
-    startpos_y: {
-      default: 60
+    startpos_y:{
+      default:60
     },
     zindex: {
       type: Number,
