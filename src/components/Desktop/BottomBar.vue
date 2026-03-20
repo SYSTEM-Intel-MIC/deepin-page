@@ -21,6 +21,7 @@
             <Icon :srcc="'vscode'" mode="large"  class=" tw-ml-3" @button_clicked="vscode_clicked" :tagcont="'vscode'" :cfocus="$store.state.current_focus_type==='vscode'" :fshow="has_vscode" @contextmenu.prevent.native="mr_clicked($event, 'vscode', has_vscode)"/>
             <Icon :srcc="'settings'" mode="large"  class=" tw-ml-3" @button_clicked="settings_clicked" :tagcont="'Settings'" :cfocus="$store.state.current_focus_type==='settings'" :fshow="has_settings" @contextmenu.prevent.native="mr_clicked($event, 'settings', has_settings)"/>
             <Icon :srcc="'shell'" mode="large"  class=" tw-ml-3" @button_clicked="terminal_clicked" :tagcont="'Terminal'" :cfocus="$store.state.current_focus_type==='terminal'" :fshow="has_terminal" @contextmenu.prevent.native="mr_clicked($event, 'terminal', has_terminal)"/>
+            <Icon :srcc="'minecraft'" mode="large"  class=" tw-ml-3" @button_clicked="minecraft_clicked" :tagcont="'Minecraft'" :cfocus="$store.state.current_focus_type==='minecraft'" :fshow="has_minecraft" @contextmenu.prevent.native="mr_clicked($event, 'minecraft', has_minecraft)"/>
           </div>
         </div>
         <div class=" tw-absolute tw-h-full tw-flex tw-items-center tw-justify-center tw-flex-row-reverse tw-pr-2" style="right:0">
@@ -204,6 +205,16 @@ export default {
         this.$store.commit('open_new_window', {'type':'terminal'})
       }
       this.$store.commit('refresh_window_focus', {'type':'terminal'})
+    },
+    minecraft_clicked(){
+      if (this.has_minecraft) {
+        if (this.window_type_all_hide_or_at_the_top({'type':'minecraft'})) {
+          this..commit('switch_global_window_show_status', {'type':'minecraft'})
+        }
+      } else {
+        this..commit('open_new_window', {'type':'minecraft'})
+      }
+      this..commit('refresh_window_focus', {'type':'minecraft'})
     },
     vscode_clicked(){
       if (this.has_vscode) {
