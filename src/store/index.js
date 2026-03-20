@@ -166,7 +166,7 @@ const store = new Vuex.Store({
       state.scrollWidth = document.documentElement.scrollWidth || document.body.scrollWidth
     },
     get_auth_status(state){
-      if (Vue.prototype..get('auth') == 'true'){
+      if (Vue.prototype.$cookies.get('auth') == 'true'){
         state.authed = true
       } else {
         state.authed = false
@@ -174,17 +174,17 @@ const store = new Vuex.Store({
     },
     set_auth_status(state , data){
       if (data == true) {
-        Vue.prototype..set('auth',"true",'10m')
+        Vue.prototype.$cookies.set('auth',"true",'10m')
         this.commit('get_login_status')
       }
     },
     set_darkmode(state) {
       state.theme='dark'
-      Vue.prototype..set('theme',state.theme,'720d')
+      Vue.prototype.$cookies.set('theme',state.theme,'720d')
     },
     set_lightmode(state) {
       state.theme='light'
-      Vue.prototype..set('theme',state.theme,'720d')
+      Vue.prototype.$cookies.set('theme',state.theme,'720d')
     },
     change_side_bar_status(state){
       state.show_sidebar = !state.show_sidebar
