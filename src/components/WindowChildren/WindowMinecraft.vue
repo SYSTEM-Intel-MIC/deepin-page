@@ -1,5 +1,5 @@
 <template>
-  <Window :uuid='uuid' :startpos_x="startpos_x" :startpos_y="startpos_y" :zindex="zindex" :default_width="900" :default_height="650" :minimized="minimized" :blacktheme="true">
+  <Window :uuid='uuid' :startpos_x="startpos_x" :startpos_y="startpos_y" :zindex="zindex" :default_width="900" :minimized="minimized" :blacktheme="true">
     <template v-slot:header>
       <div class="tw-flex tw-items-center tw-select-none" style="pointer-events:none;">
         <div class="tw-w-8 tw-h-8 tw-ml-4 tw-flex tw-items-center tw-justify-center" style="background-color:#5D7C15;border-radius:4px;">
