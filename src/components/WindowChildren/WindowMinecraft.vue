@@ -308,10 +308,6 @@ export default {
       ]
     }
   },
-  created(){
-  },
-  mounted(){
-  },
   props: {
     uuid: String,
     startpos_x: {
