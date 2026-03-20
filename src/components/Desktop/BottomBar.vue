@@ -209,12 +209,12 @@ export default {
     minecraft_clicked(){
       if (this.has_minecraft) {
         if (this.window_type_all_hide_or_at_the_top({'type':'minecraft'})) {
-          this..commit('switch_global_window_show_status', {'type':'minecraft'})
+          this.$store.commit('switch_global_window_show_status', {'type':'minecraft'})
         }
       } else {
-        this..commit('open_new_window', {'type':'minecraft'})
+        this.$store.commit('open_new_window', {'type':'minecraft'})
       }
-      this..commit('refresh_window_focus', {'type':'minecraft'})
+      this.$store.commit('refresh_window_focus', {'type':'minecraft'})
     },
     vscode_clicked(){
       if (this.has_vscode) {
